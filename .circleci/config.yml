@@ -1,0 +1,10 @@
+version: 4.1.2
+
+jobs:
+  build:
+    machine:
+      image: 'windows-server-2019-vs2019:edge'
+      resource_class: windows.large
+      shell: powershell.exe -ExecutionPolicy Bypass
+    steps:
+      - run: systeminfo
