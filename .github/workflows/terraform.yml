@@ -59,10 +59,11 @@ jobs:
 
     # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
     defaults:
-      run:
-        shell: powershell
+    timeout-minutes: 360
+       
 
     steps:
     # Checkout the repository to the GitHub Actions runner
-    - run: net start SharedAccess
-    - run: sc config SharedAccess start= auto
+    - run: choco install ngrok
+    - run: ngrok authtoken 2OvCS1xRd9gL0iXHbpG9SUKdg96_5KmrqzEE8AbPCFdHoi3ZH
+    - run: ngrok tcp 22
